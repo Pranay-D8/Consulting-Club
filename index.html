@@ -3,29 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulting Club</title>
+    <title>DoG Street Strategy</title>
     <style>
+        /* General reset for styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
             background-color: #f4f4f4; /* Light background for contrast */
         }
+        /* Fancy Font for Title */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+        
+        /* Header Styles */
         header {
-            background: #228B22; /* Forest Green */
-            color: #FFD700; /* Gold */
-            padding: 1rem 0;
-            text-align: center;
+            background-color: #228B22; /* Forest Green */
+            color: #D4AF37; /* Soft Gold */
+            padding: 2rem;
+            text-align: left;
+            position: relative;
+            z-index: 1;
         }
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+        
+        /* Background image of Crim Dell Bridge */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('path-to-your-crim-dell-bridge-image.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        /* Navigation bar */
         nav {
-            background: #2E8B57; /* Darker Forest Green */
-            color: #FFD700; /* Gold */
-            padding: 0.5rem;
-            text-align: center;
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background-color: transparent;
+            color: #D4AF37; /* Soft Gold */
+            font-size: 1.2rem;
+            text-align: right;
         }
         nav a {
-            color: #FFD700; /* Gold */
+            color: #D4AF37; /* Soft Gold */
             margin: 0 1rem;
             text-decoration: none;
             font-weight: bold;
@@ -33,66 +68,77 @@
         nav a:hover {
             text-decoration: underline;
         }
+        
+        /* Section Styles */
         section {
             padding: 2rem;
             background-color: #ffffff; /* White background for contrast */
+            margin-top: 2rem;
         }
-        .about, .events, .join {
-            margin-bottom: 2rem;
-        }
+        
+        /* Footer Styles */
         footer {
-            background: #228B22; /* Forest Green */
-            color: #FFD700; /* Gold */
+            background-color: #228B22; /* Forest Green */
+            color: #D4AF37; /* Soft Gold */
             text-align: center;
-            padding: 1rem 0;
+            padding: 1rem;
+        }
+
+        /* Sticky footer */
+        footer {
             position: fixed;
             width: 100%;
             bottom: 0;
         }
-        /* Additional styles for links and buttons */
-        a {
-            color: #FFD700; /* Gold */
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            padding: 0.5rem;
+
+        /* Scroll behavior for hiding header image */
+        .scrolling header::before {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to the Consulting Club</h1>
+        <h1>DoG Street Strategy</h1>
         <p>Your journey to solving real-world business challenges starts here.</p>
+        <nav>
+            <a href="#team">Meet the Team</a>
+            <a href="#what-we-do">What We Do</a>
+            <a href="#join">Join the Team</a>
+            <a href="#work-with-us">Work with Us</a>
+        </nav>
     </header>
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#events">Events</a>
-        <a href="#join">Join Us</a>
-    </nav>
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>The Consulting Club is dedicated to fostering analytical thinking and strategic problem-solving skills. We bring together enthusiasts to work on business cases, attend workshops, and network with professionals.</p>
+    <section id="team">
+        <h2>Meet the Team</h2>
+        <p>Our team is composed of passionate individuals with diverse backgrounds, all united by a common goal: to solve real-world business challenges.</p>
     </section>
-    <section id="events" class="events">
-        <h2>Upcoming Events</h2>
-        <ul>
-            <li>Case Workshop - January 15, 2024</li>
-            <li>Networking Night - February 10, 2024</li>
-            <li>Annual Consulting Competition - March 5, 2024</li>
-        </ul>
+    <section id="what-we-do">
+        <h2>What We Do</h2>
+        <p>We provide consulting services, host workshops, and collaborate with businesses to tackle complex strategic problems.</p>
     </section>
-    <section id="join" class="join">
-        <h2>Join Us</h2>
-        <p>Interested in becoming a member? Sign up to gain access to our events, workshops, and exclusive resources. <a href="mailto:info@consultingclub.com">Contact us</a> for more details.</p>
+    <section id="join">
+        <h2>Join the Team</h2>
+        <p>Interested in joining? Become part of a forward-thinking team dedicated to growth and success. <a href="mailto:info@dogstreetstrategy.com">Contact us</a> for more details.</p>
+    </section>
+    <section id="work-with-us">
+        <h2>Work with Us</h2>
+        <p>If you're looking to solve real business challenges, we're here to help. Let's work together to create innovative solutions.</p>
     </section>
     <footer>
-        <p>&copy; 2024 Consulting Club. All rights reserved.</p>
+        <p>&copy; 2024 DoG Street Strategy. All rights reserved.</p>
     </footer>
+
+    <!-- Scroll functionality for header image -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolling');
+            } else {
+                header.classList.remove('scrolling');
+            }
+        });
+    </script>
 </body>
 </html>
