@@ -7,34 +7,44 @@
     <style>
         /* General reset for styling */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Helvetica Neue', sans-serif; /* Modern font */
             margin: 0;
             padding: 0;
             line-height: 1.6;
             background-color: #f4f4f4; /* Light background for contrast */
         }
-        /* Fancy Font for Title */
+        
+        /* Importing Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap'); /* For body text */
         
         /* Header Styles */
         header {
-            background-color: #228B22; /* Forest Green */
-            color: #D4AF37; /* Soft Gold */
+            background-color: #005a2c; /* Dark Forest Green (William & Mary green) */
+            color: white; /* White text */
             padding: 2rem;
             text-align: left;
             position: relative;
             z-index: 1;
         }
         header h1 {
-            font-family: 'Cinzel', serif;
+            font-family: 'Cinzel', serif; /* Fancy font for title */
             font-size: 3rem;
             margin: 0;
         }
         header p {
             font-size: 1.2rem;
+            margin-top: 0.5rem;
         }
         
-        /* Background image of Crim Dell Bridge */
+        /* Crim Dell Bridge Image under header */
+        .header-image {
+            width: 100%;
+            height: auto;
+            margin-top: 1rem;
+        }
+
+        /* Background image fade for Crim Dell Bridge (scrollable) */
         header::before {
             content: "";
             position: absolute;
@@ -42,10 +52,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('path-to-your-crim-dell-bridge-image.jpg');
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAoGK3Il7lUYvSuZxygq41gAGUvFQZS2i3cA&s');
             background-size: cover;
             background-position: center;
-            opacity: 0.5;
+            opacity: 0.3;
             z-index: -1;
         }
 
@@ -55,31 +65,33 @@
             top: 2rem;
             right: 2rem;
             background-color: transparent;
-            color: #D4AF37; /* Soft Gold */
+            color: white;
             font-size: 1.2rem;
             text-align: right;
         }
         nav a {
-            color: #D4AF37; /* Soft Gold */
+            color: white; /* White text */
             margin: 0 1rem;
             text-decoration: none;
             font-weight: bold;
         }
         nav a:hover {
             text-decoration: underline;
+            color: #FFD700; /* Gold accent on hover */
         }
-        
+
         /* Section Styles */
         section {
             padding: 2rem;
             background-color: #ffffff; /* White background for contrast */
+            color: black; /* Black text */
             margin-top: 2rem;
         }
         
         /* Footer Styles */
         footer {
-            background-color: #228B22; /* Forest Green */
-            color: #D4AF37; /* Soft Gold */
+            background-color: #005a2c; /* Dark Forest Green */
+            color: white; /* White text */
             text-align: center;
             padding: 1rem;
         }
@@ -96,6 +108,14 @@
             opacity: 0;
             transition: opacity 0.3s ease-out;
         }
+        
+        /* Styling for the Crim Dell image container */
+        .crim-dell-image {
+            display: block;
+            width: 100%;
+            height: 400px; /* Fixed height for the image */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+        }
     </style>
 </head>
 <body>
@@ -103,14 +123,17 @@
         <h1>DoG Street Strategy</h1>
         <p>Your journey to solving real-world business challenges starts here.</p>
         <nav>
-            <a href="#team">Meet the Team</a>
+            <a href="#about-us">About Us</a>
             <a href="#what-we-do">What We Do</a>
             <a href="#join">Join the Team</a>
             <a href="#work-with-us">Work with Us</a>
         </nav>
     </header>
-    <section id="team">
-        <h2>Meet the Team</h2>
+    <!-- Crim Dell Bridge Image under the header -->
+    <img src="path-to-your-crim-dell-bridge-image.jpg" alt="Crim Dell Bridge" class="crim-dell-image">
+    
+    <section id="about-us">
+        <h2>About Us</h2>
         <p>Our team is composed of passionate individuals with diverse backgrounds, all united by a common goal: to solve real-world business challenges.</p>
     </section>
     <section id="what-we-do">
